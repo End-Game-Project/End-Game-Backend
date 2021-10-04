@@ -11,14 +11,14 @@ server.use(cors());
 // Middleware to decode any request body to json(with Post req)
 // server.use(express.json());
 
-// mongoose.connect(`${process.env.MONGO_SERVER}`);
+mongoose.connect(`${process.env.MONGO_SERVER}`);
 const getGamesHandler = require(`./modules/game.js`)
 const getAllGamesHandler= require(`./modules/allGame.js`)
 
 server.get('/', homeHandler);
 server.get('/getGame', getGamesHandler);
 server.get('/store', getAllGamesHandler);
-
+server.post('/addToFav', addBookHandler);
 server.get('*', notFound);
 
 
