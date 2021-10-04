@@ -3,11 +3,15 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+// const StoreModel = require('./moduls/')
 const mongoose = require('mongoose')
 const server = express();
 const PORT = process.env.PORT;
 
 server.use(cors());
+
+
+
 // Middleware to decode any request body to json(with Post req)
 // server.use(express.json());
 
