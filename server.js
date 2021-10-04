@@ -13,9 +13,12 @@ server.use(cors());
 
 // mongoose.connect(`${process.env.MONGO_SERVER}`);
 const getGamesHandler = require(`./modules/game.js`)
+const getAllGamesHandler= require(`./modules/allGame.js`)
 
 server.get('/', homeHandler);
 server.get('/getGame', getGamesHandler);
+server.get('/store', getAllGamesHandler);
+
 server.get('*', notFound);
 
 
