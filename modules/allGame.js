@@ -1,11 +1,9 @@
 const axios = require('axios');
 
 // http://localhost:3001/getGame?category=shooter
-function getGamesHandler(req, res) {
-    console.log('/getGame');
-    
-    let searchQuerey = req.query.category;
-    let gameURL = `https://www.freetogame.com/api/games?category=${searchQuerey}`;
+function getAllGamesHandler(req, res) {
+        
+    let gameURL = `https://www.freetogame.com/api/games`;
     console.log(gameURL);
     axios.get(gameURL).then(dataResult => {
 
@@ -19,4 +17,4 @@ function getGamesHandler(req, res) {
     });
 }
 
-module.exports = getGamesHandler;
+module.exports = getAllGamesHandler;
