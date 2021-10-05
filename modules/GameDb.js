@@ -15,7 +15,8 @@ const gameSchema = new mongoose.Schema({
     title:String,
     thumbnail:String,
     short_description:String,
-    game_url:String
+    game_url:String,
+    didPlayed:Boolean
 })
 const gameModel = mongoose.model('game', gameSchema)
 

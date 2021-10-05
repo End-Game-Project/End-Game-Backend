@@ -20,6 +20,7 @@ const getGamesHandler = require(`./modules/game.js`)
 const getAllGamesHandler= require(`./modules/allGame.js`)
 const {AddToFavHandler,getGamesFavHandler} = require(`./modules/AddToFav.js`)
 const DeleteFromFav = require(`./modules/DeleteFromFav`);
+const updateFavList = require(`./modules/Update`);
 
 
 server.get('/', homeHandler);
@@ -28,6 +29,8 @@ server.get('/store', getAllGamesHandler);
 server.post('/addToFav', AddToFavHandler);
 server.get('/getFav', getGamesFavHandler);
 server.delete('/deleteGame', DeleteFromFav);
+server.put('/updateList', updateFavList);
+
 server.get('*', notFound);
 
 function homeHandler(req, res) {
