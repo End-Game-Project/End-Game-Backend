@@ -19,7 +19,7 @@ function DeleteFromFav(req, res) {
                     error);
             }
             else {
-                console.log(allData);
+                // console.log(allData);
                 res.send(allData);
             }
         }))

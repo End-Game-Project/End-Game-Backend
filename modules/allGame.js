@@ -4,7 +4,7 @@ const axios = require('axios');
 function getAllGamesHandler(req, res) {
         
     let gameURL = `https://www.freetogame.com/api/games`;
-    console.log(gameURL);
+    // console.log(gameURL);
     axios.get(gameURL).then(dataResult => {
 
         let gamesArray = dataResult.data.map(item => {
