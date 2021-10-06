@@ -9,23 +9,26 @@ server.use(express.json());
 function updateFavList(req, res) {
     let { email, id, title, thumbnail, short_description, game_url, didPlayed } = req.body;
 
+    console.log("anyhtingggggggggggggggg"+email);
     gameModel.findByIdAndUpdate(id, { didPlayed }, (error, updatedData) => {
 
         if (error) {
             console.log('Error with updating the data', error);
         }
         else {
-            console.log(updatedData);
-            gameModel.find({ email }, (function (error, allData) {
+            // console.log("updateddddddddddd"+updatedData);
+            gameModel.find({ email: email }, (function (error, allData) {
+
                 if (error) {
                     console.log('Error with getting the data', error);
                 }
                 else {
-                    console.log(allData);
-                    res.send(allData);
+                    // console.log("commmm",allData);
+                    res.json(allData);
                 }
             }))
-            res.send(updatedData);
+            // console.log("hiiiiiiiiiiiiiiiiiiii",updatedData);
+            // res.send(updatedData);
         }
     })
 }
