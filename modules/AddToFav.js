@@ -9,7 +9,7 @@ server.use(express.json());
 // http://localhost:3002/getFav?email
 function getGamesFavHandler(req, res) {
     let UserEmail = req.query.email;
-    console.log("UserEmail");
+    // console.log("UserEmail");
     gameModel.find({
         email: UserEmail
     }, function (error, allData) {
@@ -28,10 +28,10 @@ async function AddToFavHandler(req, res) {
 
     let { email, id, title, thumbnail, short_description, game_url } = req.body;
 
-console.log(id);
+// console.log(id);
      gameModel.find({ id: id })
        .then((data) => {
-           console.log("11111"+ data);
+        //    console.log("11111"+ data);
             if (Object.keys(data).length==0 ) {
                 // res.send("data already exist")
                 gameModel.create(req.body);
@@ -44,7 +44,7 @@ console.log(id);
 
     gameModel.find({ email: email })
         .then((data) => {
-            console.log("222222"+data);
+            // console.log("222222"+data);
 
             res.status(200).json(data);
         })
